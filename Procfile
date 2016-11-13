@@ -1,1 +1,1 @@
-web: java -jar target/loadb-swarm.jar
+web: java -Dswarm.http.port=$PORT -jar target/loadb-swarm.jar
