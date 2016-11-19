@@ -11,7 +11,7 @@ public class LoadbResource {
 
     @GET
     public String get(){
-        return "hello loadb with test " + System.currentTimeMillis();
+        return "Hello World autom " + System.currentTimeMillis();
     }
 }
 
