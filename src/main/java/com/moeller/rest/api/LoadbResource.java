@@ -1,4 +1,4 @@
-package com.moeller;
+package com.moeller.rest.api;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

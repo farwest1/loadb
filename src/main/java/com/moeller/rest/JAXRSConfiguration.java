@@ -1,4 +1,4 @@
-package com.moeller;
+package com.moeller.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
