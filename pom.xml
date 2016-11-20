@@ -8,7 +8,38 @@
 
     <profiles>
         <profile>
-            <id>swarm</id>
+        <id>swarm</id>
+        <build>
+            <finalName>loadb</finalName>
+            <plugins>
+                <plugin>
+                    <groupId>org.wildfly.swarm</groupId>
+                    <artifactId>wildfly-swarm-plugin</artifactId>
+                    <version>${version.wildfly.swarm}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>package</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+        <dependencyManagement>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly.swarm</groupId>
+                    <artifactId>bom</artifactId>
+                    <version>${version.wildfly.swarm}</version>
+                    <scope>import</scope>
+                    <type>pom</type>
+                </dependency>
+            </dependencies>
+        </dependencyManagement>
+    </profile>
+        <profile>
+            <id>swarm_docker</id>
             <build>
                 <finalName>loadb</finalName>
                 <plugins>
@@ -20,6 +51,37 @@
                             <execution>
                                 <goals>
                                     <goal>package</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>io.fabric8</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>0.18.1</version>
+                        <configuration>
+                            <dockerHost>http://172.28.128.3:2376</dockerHost>
+                            <showLogs>true</showLogs>
+                            <images>
+                                <image>
+                                    <name>mvntst:0.0.1</name>
+                                    <alias>loadb</alias>
+                                    <build>
+                                        <dockerFileDir>${project.basedir}</dockerFileDir>
+                                    </build>
+                                    <run>
+                                        <namingStrategy>alias</namingStrategy>
+                                        <ports>
+                                            <port>8080:8080</port>
+                                        </ports>
+                                    </run>
+                                </image>
+                            </images>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>build-nofork</goal>
                                 </goals>
                             </execution>
                         </executions>
@@ -38,6 +100,7 @@
                 </dependencies>
             </dependencyManagement>
         </profile>
+
     </profiles>
     <properties>
         <version.wildfly.swarm>2016.11.0</version.wildfly.swarm>
