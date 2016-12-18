@@ -19,7 +19,7 @@ public class PermissionResource {
 
     @GET
     public String getPermission(){
-        rightsAssignment.toggleRight();
-        return "perm";
+        Boolean b = rightsAssignment.toggleRight();
+        return b.toString();
     }
 }
