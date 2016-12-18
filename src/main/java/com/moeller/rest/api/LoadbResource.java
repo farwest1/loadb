@@ -4,6 +4,7 @@ import com.moeller.security.UserHasRight;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -15,7 +16,8 @@ public class LoadbResource {
     @GET
     @UserHasRight
     public String get(){
-        return "Hello World " + System.currentTimeMillis();
+        //return "Hello World " + System.currentTimeMillis();
+        return LocalDateTime.now().toString();
     }
 }
 
