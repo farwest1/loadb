@@ -3,6 +3,7 @@ package com.moeller.business.service;
 import com.moeller.business.common.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 
 /**
  * Created by Bernd on 20.11.2016.
@@ -23,6 +24,7 @@ public class RightsAssignment {
 
     public boolean toggleRight() {
         hasRight = !hasRight;
+        MDC.put("Test", "Bernd");
         LOGGER.info("Toggeled right to" + hasRight);
         return hasRight;
     }
