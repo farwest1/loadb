@@ -40,15 +40,6 @@
                     <scope>import</scope>
                     <type>pom</type>
                 </dependency>
-                <dependency>
-                    <groupId>org.wildfly.swarm</groupId>
-                    <artifactId>jpa</artifactId>
-                </dependency>
-                <dependency>
-                  <groupId>postgresql</groupId>
-                  <artifactId>postgresql</artifactId>
-                  <version>9.4.1208</version>
-                </dependency>
             </dependencies>
         </dependencyManagement>
     </profile>
@@ -152,6 +143,15 @@
             <version>1.7.21</version>
             <scope>provided</scope>
         </dependency>
+      <dependency>
+        <groupId>org.wildfly.swarm</groupId>
+        <artifactId>jpa</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>9.4.1208</version>
+      </dependency>
     </dependencies>
 
     <build>
