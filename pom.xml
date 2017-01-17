@@ -26,6 +26,7 @@
                   <configuration>
                     <properties>
                       <swarm.ds.connection.url>${env.DATABASE_URL}</swarm.ds.connection.url>
+                      <swarm.jdbc.driver>postgres</swarm.jdbc.driver>
                     </properties>
                   </configuration>
                 </plugin>
