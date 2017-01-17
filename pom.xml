@@ -23,6 +23,11 @@
                             </goals>
                         </execution>
                     </executions>
+                  <configuration>
+                    <properties>
+                      <swarm.ds.connection.url>${env.DATABASE_URL}</swarm.ds.connection.url>
+                    </properties>
+                  </configuration>
                 </plugin>
             </plugins>
         </build>
@@ -34,6 +39,15 @@
                     <version>${version.wildfly.swarm}</version>
                     <scope>import</scope>
                     <type>pom</type>
+                </dependency>
+                <dependency>
+                    <groupId>org.wildfly.swarm</groupId>
+                    <artifactId>jpa</artifactId>
+                </dependency>
+                <dependency>
+                  <groupId>postgresql</groupId>
+                  <artifactId>postgresql</artifactId>
+                  <version>9.4.1208</version>
                 </dependency>
             </dependencies>
         </dependencyManagement>
