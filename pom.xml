@@ -25,9 +25,8 @@
                     </executions>
                   <configuration>
                     <properties>
-                      <fractions>postgresql:postgresql9.1-901-1.jdbc4</fractions>
+                      <mainClass>com.moeller.wildfly.MyMain</mainClass>
                       <swarm.ds.connection.url>${env.JDBC_DATABASE_URL}</swarm.ds.connection.url>
-                      <swarm.jdbc.driver>postgres</swarm.jdbc.driver>
                       <swarm.use.db>postgresql</swarm.use.db>
                     </properties>
                   </configuration>
@@ -154,10 +153,11 @@
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jpa</artifactId>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
       <dependency>
-        <groupId>postgresql</groupId>
+        <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
-        <version>9.1-901-1.jdbc4</version>
+        <version>9.4.1212.jre7</version>
       </dependency>
     </dependencies>
 
