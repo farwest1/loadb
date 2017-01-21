@@ -27,7 +27,7 @@
                     <properties>
                       <fractions>postgresql:postgresql9.1-901-1.jdbc4</fractions>
                       <swarm.ds.connection.url>${env.JDBC_DATABASE_URL}</swarm.ds.connection.url>
-                      <swarm.jdbc.driver>postgresql</swarm.jdbc.driver>
+                      <swarm.jdbc.driver>postgres</swarm.jdbc.driver>
                     </properties>
                   </configuration>
                 </plugin>
